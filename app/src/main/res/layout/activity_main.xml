@@ -56,7 +56,14 @@
         android:nextFocusRight="@id/button"
         android:nextFocusDown="@id/spin_switch" />
 
-    <!-- ImageView for flag -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="French Flag"
+        android:textColor="@color/my_text"
+        tools:ignore="MissingConstraints" />
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -66,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:srcCompat="@drawable/flag" />
 
-    <!-- Switch to toggle animation -->
+
     <Switch
         android:id="@+id/spin_switch"
         android:layout_width="wrap_content"
