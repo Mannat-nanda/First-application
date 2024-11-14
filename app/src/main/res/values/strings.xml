@@ -4,4 +4,5 @@
 <string name="button_message">Click Me</string>
 <string name="editmessage">I\'m an EditText</string>
 <string name="hinttext">Write something here</string>
+    <string name="spin_message">Spin flag</string>
 </resources>

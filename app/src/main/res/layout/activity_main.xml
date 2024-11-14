@@ -1,43 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp"
     tools:context=".MainActivity">
 
+    <!-- Button 1 -->
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:text="Button 1"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:nextFocusRight="@id/button2"
+        android:nextFocusDown="@id/spin_switch" />
 
+    <!-- Button 2 -->
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:text="Button 2"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        android:nextFocusLeft="@id/button"
+        android:nextFocusRight="@id/button3"
+        android:nextFocusDown="@id/spin_switch" />
 
+    <!-- Button 3 -->
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:text="Button 3"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:nextFocusLeft="@id/button2"
+        android:nextFocusRight="@id/button"
+        android:nextFocusDown="@id/spin_switch" />
+
+    <!-- ImageView for flag -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:srcCompat="@drawable/flag" />
+
+    <!-- Switch to toggle animation -->
+    <Switch
+        android:id="@+id/spin_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:minHeight="48dp"
+        android:nextFocusUp="@id/button"
+        android:text="@string/spin_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
