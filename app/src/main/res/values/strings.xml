@@ -1,8 +1,8 @@
 <resources>
-<string name="app_name">Mannat\'s_Android_Lab</string>
-<string name="Hello_message">Hello World!</string>
-<string name="button_message">Click Me</string>
-<string name="editmessage">I\'m an EditText</string>
-<string name="hinttext">Write something here</string>
+    <string name="app_name">Mannat\'s_Android_Lab</string>
+    <string name="Hello_message">Hello World!</string>
+    <string name="button_message">Click Me</string>
+    <string name="editmessage">I\'m an EditText</string>
+    <string name="hinttext">Write something here</string>
     <string name="spin_message">Spin flag</string>
 </resources>
