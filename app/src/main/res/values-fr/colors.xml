@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Blue (left side of the flag) -->
+    <color name="my_primary">#0055A4</color>
+
+    <!-- White (middle of the flag) -->
+    <color name="my_secondary">#FFFFFF</color>
+
+    <!-- Red (right side of the flag) -->
+    <color name="my_statusbar">#EF4135</color>
+
+    <!-- Text color (for example, red text for French flag contrast) -->
+    <color name="my_text">#EF4135</color>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Laboratoire Android de Mannat</string>
+    <string name="Hello_message">Bonjour le monde!</string>
+    <string name="button_message">Cliquez moi</string>
+    <string name="editmessage">Je suis un EditText</string>
+    <string name="hinttext">Écrivez quelque chose ici</string>
+    <string name="spin_message">Faire tourner le drapeau</string>
+</resources>
