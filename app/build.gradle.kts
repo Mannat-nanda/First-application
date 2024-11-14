@@ -3,9 +3,13 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.mannatsandroidlab"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "com.example.mannatsandroidlab"
         minSdk = 24
