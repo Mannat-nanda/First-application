@@ -17,7 +17,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+
+
 }
 
-rootProject.name = "Mannat's Android Lab"
+rootProject.name = "mannatsandroidlab"
 include(":app")

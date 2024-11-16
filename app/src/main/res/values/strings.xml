@@ -1,5 +1,3 @@
 <resources>
-    <string name="app_name">Mannat\'s Android Lab</string>
-    <string name="Hello_message">Hello world!</string>
-    <string name="button_message">I am a button</string>
+    <string name="app_name">recycleview</string>
 </resources>
