@@ -1,16 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MannatsAndroidLab" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Junit" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">@color/my_primary</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/my_secondary</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/my_text</item>
-        <!-- Customize your theme here. -->
-        <item name ="android:textColor">@color/my_text</item>
     </style>
 
-    <style name="Theme.MannatsAndroidLab" parent="Base.Theme.MannatsAndroidLab" />
+    <style name="Theme.Junit" parent="Base.Theme.Junit" />
 </resources>
