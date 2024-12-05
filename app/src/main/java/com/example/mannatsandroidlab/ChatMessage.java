@@ -1,38 +1,70 @@
 package com.example.mannatsandroidlab;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity
 public class ChatMessage {
-    private String message;  // Message text
-    private String timeSent;  // Time the message was sent
-    private boolean isSentButton;  // True if the message is sent, false if received
 
-    // Constructor to create a new ChatMessage
-    public ChatMessage(String message, boolean isSentButton) {
-        this.message = message;
-        this.timeSent = getCurrentTime();
-        this.isSentButton = isSentButton;
+    @PrimaryKey(autoGenerate = true)
+    private int id; // Unique ID for each message
+
+    @ColumnInfo(name = "message_text")
+    private String messageText; // Message content
+
+    @ColumnInfo(name = "is_sent")
+    private boolean isSent; // True for sent messages, false for received
+
+    @ColumnInfo(name = "timestamp")
+    private String timestamp; // Timestamp when the message was created
+
+    // Default constructor for Room
+    public ChatMessage() {}
+
+    // Constructor to initialize a new ChatMessage
+    public ChatMessage(String messageText, boolean isSent) {
+        this.messageText = messageText;
+        this.isSent = isSent;
+        this.timestamp = getCurrentTime(); // Automatically set the timestamp
     }
 
-    // Method to get the current time in a desired format
+    // Getters and Setters
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMessageText() {
+        return messageText; // Getter for messageText
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText; // Setter for messageText
+    }
+
+    public boolean isSent() {
+        return isSent; // Getter for isSent
+    }
+
+    public void setSent(boolean sent) {
+        isSent = sent; // Setter for isSent
+    }
+
+    public String getTimestamp() {
+        return timestamp; // Getter for timestamp
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp; // Setter for timestamp
+    }
+
+    // Utility method to get the current timestamp
     private String getCurrentTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat(" hh:mm a ,  dd/MM/yyyy"); // Format: "12:00 PM"
-        return sdf.format(new Date()); // Return the formatted current time
-    }
-
-
-
-    // Getters for message properties
-    public String getMessage() {
-        return message;
-    }
-
-    public String getTimeSent() {
-        return timeSent;
-    }
-
-    public boolean isSentButton() {
-        return isSentButton;
+        return java.text.DateFormat.getDateTimeInstance().format(new java.util.Date());
     }
 }

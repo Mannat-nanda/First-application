@@ -24,7 +24,7 @@ android {
     }
 
     viewBinding {
-        var enabled = true
+         enable = true
     }
 
     compileOptions {
@@ -44,4 +44,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    val roomVersion = "2.4.2"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+
 }

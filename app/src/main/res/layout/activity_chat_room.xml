@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ChatRoom">
 
+    <!-- RecyclerView for displaying messages -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -13,12 +14,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/inputLayout" />
 
+    <!-- Input layout for message input and buttons -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/deleteButton">
 
+        <!-- EditText for entering messages -->
         <EditText
             android:id="@+id/editMessage"
             android:layout_width="0dp"
@@ -28,6 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TouchTargetSizeCheck" />
 
+        <!-- Button for sending messages -->
         <Button
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
@@ -35,6 +39,7 @@
             android:text="Send"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Button for receiving messages -->
         <Button
             android:id="@+id/receiveButton"
             android:layout_width="wrap_content"
@@ -42,5 +47,17 @@
             android:text="Receive"
             app:layout_constraintEnd_toStartOf="@id/sendButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Delete button below inputLayout -->
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inputLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

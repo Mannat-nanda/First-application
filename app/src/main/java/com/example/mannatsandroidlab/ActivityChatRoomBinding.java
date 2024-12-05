@@ -3,6 +3,7 @@ package com.example.mannatsandroidlab;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,8 @@ public class ActivityChatRoomBinding {
     public EditText editMessage;  // EditText to type messages
     public View receiveButton;
 
+    public Button deleteButton;  // Button to delete messages
+
     // Private constructor to prevent direct instantiation
     private ActivityChatRoomBinding(View root) {
         // Initialize views using the root view
@@ -25,6 +28,7 @@ public class ActivityChatRoomBinding {
         sendButton = root.findViewById(R.id.sendButton);
         editMessage = root.findViewById(R.id.editMessage);
         receiveButton = root.findViewById(R.id.receiveButton);
+        deleteButton = root.findViewById(R.id.deleteButton);
     }
 
     // Static method to inflate the binding from the layout

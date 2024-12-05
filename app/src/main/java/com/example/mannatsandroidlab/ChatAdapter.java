@@ -8,16 +8,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import java.util.ArrayList;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyRowHolder> {
 
     private ArrayList<ChatMessage> messages;  // List of chat messages
+    private OnMessageClickListener listener; // Listener for message clicks
 
-    // Constructor to initialize the adapter with the messages list
-    public ChatAdapter(ArrayList<ChatMessage> messages) {
+    // Interface for handling message clicks
+    public interface OnMessageClickListener {
+        void onMessageClick(ChatMessage message);
+    }
+
+    // Constructor to initialize the adapter with the messages list and click listener
+    public ChatAdapter(ArrayList<ChatMessage> messages, OnMessageClickListener listener) {
         this.messages = messages;
+        this.listener = listener;
     }
 
     // Create new row view in the RecyclerView
@@ -42,9 +48,17 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyRowHolder> {
     public void onBindViewHolder(@NonNull MyRowHolder holder, int position) {
         // Get the chat message at the given position
         ChatMessage message = messages.get(position);
+
         // Bind the message text and time to the TextViews in the row
-        holder.messageText.setText(message.getMessage());
-        holder.timeText.setText(message.getTimeSent());
+        holder.messageText.setText(message.getMessageText());
+        holder.timeText.setText(message.getTimestamp());
+
+        // Handle click events
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onMessageClick(message); // Notify the listener of the click
+            }
+        });
     }
 
     // Returns the total number of messages
@@ -57,7 +71,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyRowHolder> {
     @Override
     public int getItemViewType(int position) {
         ChatMessage message = messages.get(position);
-        return message.isSentButton() ? 0 : 1;  // 0 for sent, 1 for received
+        return message.isSent() ? 0 : 1;  // 0 for sent, 1 for received
     }
 
     // Inner class that holds references to the views in each row
