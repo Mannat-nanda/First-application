@@ -1,38 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Title for the Weather Forecast -->
     <TextView
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Type your Password:"
-        android:textSize="18sp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:contentDescription="Password prompt" />
-
-    <EditText
-        android:id="@+id/editview"
+        android:id="@+id/textTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textview"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        android:minHeight="48dp" />
+        android:text="Weather Forecast"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
 
+    <!-- EditText for Entering City Name -->
+    <EditText
+        android:id="@+id/editTextCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter City Name"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Button to Trigger Weather API -->
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/buttonGetForecast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editview"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:minHeight="48dp"
-        android:text="Login"
-        android:contentDescription="Login button" />
-</RelativeLayout>
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:text="Get Forecast" />
+
+    <!-- Weather Data Display -->
+    <TextView
+        android:id="@+id/textCurrentTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Current Temp: "
+        android:visibility="gone"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textMaxTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max Temp: "
+        android:visibility="gone"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textMinTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min Temp: "
+        android:visibility="gone"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity: "
+        android:visibility="gone"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description: "
+        android:visibility="gone"
+        android:textSize="16sp" />
+
+    <!-- Weather Icon -->
+    <ImageView
+        android:id="@+id/imageWeatherIcon"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+</LinearLayout>
