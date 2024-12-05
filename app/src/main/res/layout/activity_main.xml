@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Type your Password:"
-        android:textSize="18sp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:contentDescription="Password prompt" />
-
-    <EditText
-        android:id="@+id/editview"
+    <FrameLayout
+        android:id="@+id/framelayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textview"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        android:minHeight="48dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editview"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:minHeight="48dp"
-        android:text="Login"
-        android:contentDescription="Login button" />
-</RelativeLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="#075E53"
+            app:tabIndicatorColor="@color/white"
+            app:tabSelectedTextColor="@color/white">
+
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fisrt" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Second" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Third" />
+        </com.google.android.material.tabs.TabLayout>
+    </FrameLayout>
+
+
+</LinearLayout>
