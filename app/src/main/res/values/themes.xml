@@ -2,6 +2,9 @@
 
     <style name="Base.Theme.Recycleview" parent="Theme.Material3.DayNight.NoActionBar">
 
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
     </style>
 
     <style name="Theme.Recycleview" parent="Base.Theme.Recycleview" />
